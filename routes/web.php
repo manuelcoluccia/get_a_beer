@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\FrontController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class , 'index'])->name('/');
+Route::get('/breweries',[FrontController::class , 'breweries'])->name('breweries');
+Route::get('/team', [FrontController::class , 'team'])->name('team');
+
+Route::get('/about',[HomeController::class , 'about'])->name('about');
+Route::post('/contacts/submit' ,[HomeController::class], 'submit')->name('contact.submit');
+Route::get('/contacts/thankyou' ,[HomeController::class], 'thankyou')->name('contact.thankyou');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
