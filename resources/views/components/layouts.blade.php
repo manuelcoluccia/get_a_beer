@@ -13,8 +13,7 @@
 
         <title>{{$title ?? 'Birrerie locali'}}i</title>
 
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}"></script>
+      
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -49,16 +48,21 @@
 
         @stack('script')
 
-        <!-- Bootstrap core JavaScript -->
+        
+        
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}"></script>
+        
+       {{--  <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
+        
         <!-- Plugin JavaScript -->
         <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+        
         <!-- Custom scripts for this template -->
         <script src="js/stylish-portfolio.min.js"></script>
-
+        
         
     </body>
 

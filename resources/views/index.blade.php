@@ -81,16 +81,7 @@
       </div>
     </section>
 
-    <!-- Callout -->
-    <section class="callout">
-      <div class="container text-center">
-        <h2 class="mx-auto mb-5">Welcome to
-          <em>your</em>
-          next website!</h2>
-        <a class="btn btn-primary btn-xl" href="https://startbootstrap.com/theme/stylish-portfolio/">Download Now!</a>
-      </div>
-    </section>
-
+   
     <!-- Portfolio -->
     <section class="content-section" id="portfolio">
       <div class="container">
@@ -150,9 +141,8 @@
     <!-- Call to Action -->
     <section class="content-section bg-primary text-white">
       <div class="container text-center">
-        <h2 class="mb-4">The buttons below are impossible to resist...</h2>
-        <a href="#!" class="btn btn-xl btn-light mr-4">Click Me!</a>
-        <a href="#!" class="btn btn-xl btn-dark">Look at Me!</a>
+        <h2 class="mb-4">Conosci una nuova birreria? Segnalacela</h2>
+        <a href="{{route ('report')}}" class="btn btn-xl btn-dark">Segnala!</a>
       </div>
     </section>
 
