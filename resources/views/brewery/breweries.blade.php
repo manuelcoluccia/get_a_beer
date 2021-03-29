@@ -8,7 +8,7 @@
       <div class="row no-gutters">
         @foreach ($breweries as $brewery)
         <div class="col-lg-6">
-          <a class="portfolio-item" href="#!">
+          <a class="portfolio-item" href="{{route('brewery.details',['id' => $brewery->id])}}">
             <div class="caption">
               <div class="caption-content">
                 <div class="h2">{{$brewery->name}}</div>

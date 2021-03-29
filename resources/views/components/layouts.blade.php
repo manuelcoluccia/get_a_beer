@@ -46,7 +46,7 @@
 
         <x-_footer />
 
-        @stack('script')
+       
 
         
         
@@ -62,6 +62,8 @@
         
         <!-- Custom scripts for this template -->
         <script src="js/stylish-portfolio.min.js"></script>
+
+        @stack('scripts')
         
         
     </body>

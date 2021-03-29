@@ -27,7 +27,7 @@
                     <label class="text-white" for="description">Descrizione</label>
                     <textarea class="form-control mb-3" name="description" id="description" cols="30" rows="10" value={{old('description')}}></textarea>
                     <label class="text-white" for="img">Immagine</label>
-                    <div><input type="file" class="mb-3 text-white" id="img" required name="img" value={{old('img')}}></div>         
+                    <div><input type="file" class="mb-3 text-white" id="img"  name="img" value={{old('img')}}></div>         
                   </div> 
                 <button type="submit" class="btn btn-success">Invia</button>
               </form>
