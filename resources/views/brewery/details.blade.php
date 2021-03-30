@@ -65,21 +65,117 @@
         @endif
     @endauth
 
+    <!--Comments-->
+    <section class="content-section mt-5" id="comments">
+        <div class="container mt-5">
+            <div class="content-section-heading text-center">
+                <h3 class="text-secondary">Commenti</h3>
+                <h2 class="mb-5">Scopri cosa pensano gli utenti della birreria <strong>{{$brewery->name}}</strong></h2>
+            </div>
+            <div class="row no-glutters">
+                @foreach ($brewery->comments as $comment)
+                    <div class="col-lg-6">
+                        <div class="p-3 mb-2 bg-primary text-white">
+                            <span class="caption">
+                                <span class="capiton-content">
+                                    <h2>{{$comment->user->name}}</h2>
+                                    <p class="mb-0">{{$comment->comment}}</p>
+                                </span>
+                            </span>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @auth
+        <div class="container">
+            <h2>Commenta birreria</h2>
+            <form action="{{route('brewery.comments.add' , ['id' => $brewery->id])}}" method="POST">
+                @csrf
+                <div class="form-group row">
+                    <label for="comment" class="col-sm-2 col-form-label">Commento</label>
+                    <div class="col-sm-10">
+                        <textarea name="comment">{{old('comment')}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label"></label>
+                    <div class="col-sm-10">
+                       <button type="submit" class="btn btn-primary">Invia</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    @endauth
+
+  
+
      <!-- Map -->
-     <div id="contact" class="map m-5">
-        <iframe  width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-        <br />
-        <small>
-          <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-        </small>
-      </div>
-
-     
-         
-     
-   
-
+     <section id="contact" class="map m-5">
+        <div id="brewery-map" class="img-fluid w-100" style="height:500px;"
+            lat="{{$brewery->lat}}"
+            lon="{{$brewery->lon}}"
+            name="{{$brewery->name}}"
+            description="{{$brewery->description}}"
+        >
+        </div>
+     </section>
 
 
 
 </x-layouts>
+
+@push('scripts')
+
+<script async 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPAw37yaMT2i92kvX9Zd4vp8Rc7rs_PD8&callback=initMap">
+</script>
+
+
+
+<script>
+    $(function () {
+        
+        let brewery_map = $("#brewery-map");
+
+        if (! brewery_map){
+
+            return;
+        }
+
+        let lat = brewery_map.attr('lat');
+        let lon = brewery_map.attr('lon');
+
+        if (!lon || !lat){
+
+            return;
+        }
+
+        let positon = new google.maps.LatLng(lat,lon);
+
+        let position = new google.maps.Map(
+            document.getElementById('brewery-map'),
+            {center: position , zoom:18}
+        );
+
+        let marker = new google.maps.Marker({
+            position: position,
+            icon: '/img/beer-marker.png',
+            map : map,
+        });
+
+        let name = brewery_map.attr('name');
+        let description = brewery_map.attr('description');
+        let infowindow = new google.maps.InfoWindow({
+            content: '<strong>' + name + '</strong><br><i>' + description + '</i>'
+        });
+
+        marker.addListener('click', funtion(){
+            infowindow.open(map, marker);
+        });
+    });
+
+</script>
+
+@endpush

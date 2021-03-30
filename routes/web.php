@@ -13,6 +13,7 @@ Route::post('/breweries/{id}/approved',[FrontController::class, 'approved'])->na
 Route::get('/brewery/{id}/details',[FrontController::class,'details'])->name('brewery.details');
 Route::post('/brewery/{id}/update',[FrontController::class,'update'])->name('brewery.update');
 Route::delete('/brewery/{id}/destroy',[FrontController::class,'destroy'])->name('brewery.destroy');
+Route::post('/brewery/{id}comments',[FrontController::class,'addComment'])->name('brewery.comments.add');
 
 Route::get('/about',[HomeController::class , 'about'])->name('about');
 Route::post('/contacts/submit' ,[HomeController::class, 'submit'])->name('contact.submit');

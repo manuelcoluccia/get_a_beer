@@ -91,6 +91,19 @@ class FrontController extends Controller
         return redirect('breweries');
     }
 
+    public function addComment($id, Request $request)
+    {   
+        $user = Auth::user();
+        $brewery = Brewery::find($id);
+
+        $brewery->comments()->create([
+            'comment'=>$request->input('comment'),
+            'user_id'=>$user->id
+        ]);
+
+        return redirect(route('brewery.details', ['id'=>$id]));
+    }
+
 
     public function team()
     {

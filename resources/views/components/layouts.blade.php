@@ -49,6 +49,7 @@
        
 
         
+        @stack('scripts')
         
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
@@ -63,7 +64,6 @@
         <!-- Custom scripts for this template -->
         <script src="js/stylish-portfolio.min.js"></script>
 
-        @stack('scripts')
         
         
     </body>
