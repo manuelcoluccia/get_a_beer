@@ -13,9 +13,11 @@ class FrontController extends Controller
 
     public function index()
     {
-        $mytime = Carbon::now();
-        $time = $mytime->toDayDateTimeString();
-        return view('index', ['time' => $time ]);
+       $breweries = Brewery::where('visible',true)
+       ->orderBy('id' , 'desc')
+       ->take(4)
+       ->get();
+        return view('index', compact('breweries'));
     }
 
     public function breweries()

@@ -10002,3 +10002,37 @@ h3 {
     border-color: #dee2e6;
   }
 }
+* {
+  font-family: "New Tegomin", serif;
+}
+
+body {
+  background-color: black !important;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 5px #d8ca06;
+}
+
+#navbar {
+  z-index: 9999;
+  transition: 1s;
+}
+
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  background-image: linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.527)), url("/img/beer-masthead.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 40px;
+}
+
+.hr-white {
+  background-color: white;
+  width: 80px;
+  display: flex;
+  position: relative;
+  margin-right: -10px;
+}

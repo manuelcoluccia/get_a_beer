@@ -25,17 +25,19 @@
         <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom Fonts -->
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
         <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
-        <!-- Custom CSS -->
-        <link href="css/stylish-portfolio.min.css" rel="stylesheet">
+       
 
         {{$style ?? ' '}}
         
     </head>
     <body id="page-top">
         <x-_navbar />
+        <div id="app">
 
         {{$slot}}
 
@@ -47,24 +49,20 @@
         <x-_footer />
 
        
-
         
         @stack('scripts')
         
-        <!-- Scripts -->
-        <script src="{{ asset('js/app.js') }}"></script>
-        
-       {{--  <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js"></script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
-        
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-        
-        <!-- Custom scripts for this template -->
-        <script src="js/stylish-portfolio.min.js"></script>
-
-        
+    </div>
+    <script src="{{ mix('js/app.js') }}"></script>
+    
+    <!-- Bootstrap core JavaScript -->
+ {{--    <script src="vendor/jquery/jquery.min.js"></script> --}}
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    
+     <!-- Scripts -->
         
     </body>
 

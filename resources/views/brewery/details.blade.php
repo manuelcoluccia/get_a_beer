@@ -68,18 +68,18 @@
     <!--Comments-->
     <section class="content-section mt-5" id="comments">
         <div class="container mt-5">
-            <div class="content-section-heading text-center">
-                <h3 class="text-secondary">Commenti</h3>
+            <div class="content-section-heading text-center ">
                 <h2 class="mb-5">Scopri cosa pensano gli utenti della birreria <strong>{{$brewery->name}}</strong></h2>
+                <h3 class="text-secondary">Commenti</h3>
             </div>
-            <div class="row no-glutters">
+            <div class="row no-glutters mt-3">
                 @foreach ($brewery->comments as $comment)
                     <div class="col-lg-6">
-                        <div class="p-3 mb-2 bg-primary text-white">
+                        <div class="p-3 mb-2 bg-dark text-white">
                             <span class="caption">
                                 <span class="capiton-content">
-                                    <h2>{{$comment->user->name}}</h2>
-                                    <p class="mb-0">{{$comment->comment}}</p>
+                                    <h4>{{$comment->user->name}}</h4>
+                                    <p class=" font-italic mb-0">{{$comment->comment}}</p>
                                 </span>
                             </span>
                         </div>
@@ -89,20 +89,20 @@
         </div>
     </section>
     @auth
-        <div class="container">
-            <h2>Commenta birreria</h2>
+        <div class="container mt-5">
+            <h2>Lascia un commento</h2>
             <form action="{{route('brewery.comments.add' , ['id' => $brewery->id])}}" method="POST">
                 @csrf
-                <div class="form-group row">
-                    <label for="comment" class="col-sm-2 col-form-label">Commento</label>
-                    <div class="col-sm-10">
-                        <textarea name="comment">{{old('comment')}}</textarea>
+                <div class="row">                   
+                    <div class="col-10">
+                        <textarea name="comment" cols="55" rows="2">{{old('comment')}}</textarea>
+                        <button type="submit" class="btn btn-primary mb-4 ml-3">Invia</button>
+
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="name" class="col-sm-2 col-form-label"></label>
                     <div class="col-sm-10">
-                       <button type="submit" class="btn btn-primary">Invia</button>
                     </div>
                 </div>
             </form>

@@ -1,7 +1,7 @@
-<div id="app">
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-trasparent  shadow-sm fixed-top">
+        <div class="container-fluid">
+            <img src="./img/logo.png" class="img-fluid px-2" style="height: 30px;" alt="">
+            <a id="navbarBrand" class="navbar-brand" href="{{ url('/') }}">
                 Get a Beer!
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -10,17 +10,19 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('brewery.breweries')}}">Birrerie</a>
+                <ul class="navbar-nav  mr-auto">
+                    <li class="nav-item ">
+                        <a class="nav-link text-white text-right"  href="{{route('brewery.breweries')}}">Birrerie</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('team')}}">Team</a>
+                        <a class="nav-link text-white text-right" href="{{route('team')}}">Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('about')}}">Contattaci</a>
+                        <a class="nav-link text-white text-right" href="{{route('about')}}">Contattaci</a>
                     </li>
                 </ul>
+
+                <hr class="hr-white  d-md-none">
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -28,18 +30,18 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link text-right text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
                         
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link text-right text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
                         <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle ext-right text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -60,4 +62,5 @@
             </div>
         </div>
     </nav>
-</div>
+
+   

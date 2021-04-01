@@ -1,139 +1,39 @@
 <x-layouts>
 
-<style>
-  .masthead{
-  }
-</style>
-
     <!-- Header -->
-    <header class="masthead d-flex">
-      <div class="container text-center my-auto">
-        <h1 class="mb-1">Stylish Portfolio</h1>
-        <h3 class="mb-5">
-          <em>A Free Bootstrap Theme by Start Bootstrap</em>
-        </h3>
-        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+    <header class="masthead">
+      <div class="container  h-100">
+        <div class="row h-100 align-items-center">
+          <div class="col-12 text-right ">
+            <h1 class=" display-2 font- text-white text-shadow">Get a Beer</h1>
+            <p class=" h4 mt-3 text-white">Le migliori birrerie presenti nella tua città</p>
+          </div>
+        </div>
       </div>
-      <div class="overlay"></div>
     </header>
 
-    <!-- About -->
-    <section class="content-section bg-light" id="about">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
-            <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
-              <a href="https://unsplash.com/">Unsplash</a>!</p>
-            <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services -->
-    <section class="content-section bg-primary text-white text-center" id="services">
-      <div class="container">
-        <div class="content-section-heading">
-          <h3 class="text-secondary mb-0">Services</h3>
-          <h2 class="mb-5">What We Offer</h2>
-        </div>
-        <div class="row">
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-screen-smartphone"></i>
-            </span>
-            <h4>
-              <strong>Responsive</strong>
-            </h4>
-            <p class="text-faded mb-0">Looks great on any screen size!</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-pencil"></i>
-            </span>
-            <h4>
-              <strong>Redesigned</strong>
-            </h4>
-            <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
-          </div>
-          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-like"></i>
-            </span>
-            <h4>
-              <strong>Favorited</strong>
-            </h4>
-            <p class="text-faded mb-0">Millions of users
-              <i class="fas fa-heart"></i>
-              Start Bootstrap!</p>
-          </div>
-          <div class="col-lg-3 col-md-6">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-mustache"></i>
-            </span>
-            <h4>
-              <strong>Question</strong>
-            </h4>
-            <p class="text-faded mb-0">I mustache you a question...</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
+  
    
     <!-- Portfolio -->
     <section class="content-section" id="portfolio">
       <div class="container">
         <div class="content-section-heading text-center">
-          <h3 class="text-secondary mb-0">Portfolio</h3>
-          <h2 class="mb-5">Recent Projects</h2>
+          <h2 class="mb-5">Ultime Birrerie aggiunte</h2>
         </div>
         <div class="row no-gutters">
+          @foreach ($breweries as $brewery)
           <div class="col-lg-6">
-            <a class="portfolio-item" href="#!">
+            <a class="portfolio-item" href="{{route('brewery.details',['id' => $brewery->id])}}">
               <div class="caption">
                 <div class="caption-content">
-                  <div class="h2">Stationary</div>
-                  <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+                  <div class="h2">{{$brewery->name}}</div>
+                  <p class="mb-0">{{$brewery->description}}</p>
                 </div>
               </div>
-              <img class="img-fluid" src="img/portfolio-1.jpg" alt="">
+              <img class="img-fluid" src="{{Storage::url($brewery->img)}}" alt="{{$brewery->name}}">
             </a>
           </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#!">
-              <div class="caption">
-                <div class="caption-content">
-                  <div class="h2">Ice Cream</div>
-                  <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio-2.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#!">
-              <div class="caption">
-                <div class="caption-content">
-                  <div class="h2">Strawberries</div>
-                  <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio-3.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-lg-6">
-            <a class="portfolio-item" href="#!">
-              <div class="caption">
-                <div class="caption-content">
-                  <div class="h2">Workspace</div>
-                  <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
-                </div>
-              </div>
-              <img class="img-fluid" src="img/portfolio-4.jpg" alt="">
-            </a>
-          </div>
+          @endforeach       
         </div>
       </div>
     </section>
