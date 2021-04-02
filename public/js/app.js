@@ -1897,19 +1897,18 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (() => {
 
 var navbar = document.querySelector('#navbar');
-var navbarBrand = document.querySelector('#navbarBrand');
-var navbarLink = document.querySelectorAll('.nav-link');
 document.addEventListener('scroll', function () {
   if (window.pageYOffset > 20) {
     navbar.classList.remove('bg-transparent');
-    navbar.classList.add('bg-white', 'shadow');
-    navbarBrand.classList.add('text-dark');
-    navbarLink.classList.add('text-dark');
+    navbar.classList.add('bg-warning', 'shadow');
   } else {
     navbar.classList.remove('bg-white', 'shadow');
     navbar.classList.add('bg-transparent');
-    navbarBrand.classList.remove('text-dark');
   }
+});
+var togglerIcon = document.querySelector('#togglerIcon');
+document.addEventListener('click', function () {
+  togglerIcon.classList.toggle('fa-rotate-180');
 });
 
 /***/ }),

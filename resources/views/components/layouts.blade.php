@@ -27,7 +27,8 @@
         <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
 
        
@@ -63,7 +64,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     
      <!-- Scripts -->
-        
+     <script src="https://kit.fontawesome.com/bab8fbb0e4.js" crossorigin="anonymous"></script>
     </body>
 
 </html>
