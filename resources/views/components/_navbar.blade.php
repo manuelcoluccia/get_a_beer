@@ -1,28 +1,28 @@
-    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-trasparent  shadow-sm fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-trasparent py-0 fixed-top">
         <div class="container-fluid">
             <img src="./img/logo.png" class="img-fluid px-2 " style="height: 40px;" alt="">
-            <a id="navbarBrand" class=" h2 text-white pr-3 " href="{{ url('/') }}">
+            <a id="navbarBrand" class=" h2 text-white pr-3 mt-2 " href="{{ url('/') }}">
                 Get a Beer!
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span><i class="fas fa-chevron-circle-down text-white" id="togglerIcon"></i></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse bg-black" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav  mr-auto">
+                <ul class="navbar-nav mr-auto mt-3">
                     <li class="nav-item ">
-                        <a  class="nav-link h5 text-white text-right px-md-3"  href="{{route('brewery.breweries')}}">Birrerie</a>
+                        <a  class="nav-link h5 text-white  px-md-3"  href="{{route('brewery.breweries')}}">Birrerie</a>
                     </li>
                     <li class="nav-item">
-                        <a  class="nav-link h5 text-white text-right px-md-3" href="{{route('team')}}">Team</a>
+                        <a  class="nav-link h5 text-white  px-md-3" href="{{route('team')}}">Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link h5 text-white text-right px-md-3" href="{{route('about')}}">Contattaci</a>
+                        <a class="nav-link h5 text-white  px-md-3" href="{{route('about')}}">Contattaci</a>
                     </li>
                 </ul>
 
-                <hr class="hr-white  d-md-none">
+                <hr class="hr-white d-md-none">
 
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
@@ -30,13 +30,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li class="nav-item">
-                                <a class="nav-link text-right text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link  text-white h5" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
                         
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link text-right text-white" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link  text-white h5" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else

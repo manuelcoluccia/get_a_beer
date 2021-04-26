@@ -1,52 +1,87 @@
 <x-layouts>
 
-  <!-- Services -->
-  <section class="content-section bg-primary text-white text-center" id="services">
-    <div class="container">
-      <div class="content-section-heading">
-        <h2 class="mb-5">Ecco il nostro team</h2>
+  <div class="container my-5 py-5">
+    <div class="row">
+      <div class="col-12 col-md-6 text-white text-secondary">
+        <h3>Get a Beer nasce dall'idea di quattro amici amanti della birra. Seduti nella loro birreria preferita decidono di dare vita a questo progetto per fare in modo di conoscere a quante più persone possibili le birrerie presenti nella loro città.</h3>
+        <h3 class="">Iniziano cosi a mettere giù le prime idee e dopo circa tre mesi danno vita a questo progetto grazie anche al supporto degli utenti sempre pronti a segnalare nuove birrerie.</h3>
       </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-screen-smartphone"></i>
-          </span>
-          <h4>
-            <strong>Responsive</strong>
-          </h4>
-          <p class="text-faded mb-0">Looks great on any screen size!</p>
+    </div>
+    <div class="row my-5 py-5">
+      <div class="col-12">
+        <h1 class="text-center text-white">Ecco chi c'è dietro la birra che berrai stasera..</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="https://picsum.photos/130/130?image=1027">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Michele Miller</h3>
+            <h4 class="title">Web Developer</h4>
+          </div>
+          <ul class="social">
+            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+          </ul>
         </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-pencil"></i>
-          </span>
-          <h4>
-            <strong>Redesigned</strong>
-          </h4>
-          <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="https://picsum.photos/130/130?image=856">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Michele Miller</h3>
+            <h4 class="title">Web Developer</h4>
+          </div>
+          <ul class="social">
+            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+          </ul>
         </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-like"></i>
-          </span>
-          <h4>
-            <strong>Favorited</strong>
-          </h4>
-          <p class="text-faded mb-0">Millions of users
-            <i class="fas fa-heart"></i>
-            Start Bootstrap!</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="https://picsum.photos/130/130?image=839">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Michele Miller</h3>
+            <h4 class="title">Web Developer</h4>
+          </div>
+          <ul class="social">
+            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+          </ul>
         </div>
-        <div class="col-lg-3 col-md-6">
-          <span class="service-icon rounded-circle mx-auto mb-3">
-            <i class="icon-mustache"></i>
-          </span>
-          <h4>
-            <strong>Question</strong>
-          </h4>
-          <p class="text-faded mb-0">I mustache you a question...</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="our-team">
+          <div class="picture">
+            <img class="img-fluid" src="https://picsum.photos/130/130?image=836">
+          </div>
+          <div class="team-content">
+            <h3 class="name">Michele Miller</h3>
+            <h4 class="title">Web Developer</h4>
+          </div>
+          <ul class="social">
+            <li><a href="" class="fa fa-facebook" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-twitter" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-google-plus" aria-hidden="true"></a></li>
+            <li><a href="" class="fa fa-linkedin" aria-hidden="true"></a></li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
 </x-layouts>

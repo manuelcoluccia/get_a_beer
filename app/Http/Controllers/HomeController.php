@@ -52,6 +52,8 @@ class HomeController extends Controller
     public function notify(NotifyBrewery $request)
     {
         $name = $request->input('name');
+        $city = $request->input('city');
+        $address = $request->input('address');
         $description = $request->input('description');
         $img = $request->file('img')->store('public/img');
         Brewery::create(compact('name', 'description' , 'img'));

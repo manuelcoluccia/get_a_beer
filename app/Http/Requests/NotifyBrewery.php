@@ -17,6 +17,8 @@ class NotifyBrewery extends FormRequest
     {
         return [
             'name' => 'required | max:100',
+            'city' => 'required | max:100',
+            'address' => 'required | max:100',
             'description' => 'required | max:1000',
             'img' => 'required | image',
         ];
@@ -25,11 +27,13 @@ class NotifyBrewery extends FormRequest
     public function messages()
 {
     return [
-        'name.required' => 'Il nome e obbligatorio',
+        'name.required' => 'Il nome è obbligatorio',
         'name.max' => 'Il nome non puo superare i 100 caratteri',
-        'description.required' => 'La descrizione e obbligatoria',
+        'city.required' => 'La città è obbligatoria',
+        'address.required' => "L 'indirizzo è obbligatorio",
+        'description.required' => 'La descrizione è obbligatoria',
         'description.max' => 'La descrizione non puo superare i 1000 caratteri',
-        'img.required' => 'L immagine e obbligatoria',
+        'img.required' => 'L immagine è obbligatoria',
         'img.img' => 'Solo file .jpg',
 
     ];
