@@ -1,4 +1,4 @@
-    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-trasparent py-0 fixed-top">
+    <nav id="navbar" class="navbar navbar-expand-md navbar-dark bg-black py-0 fixed-top">
         <div class="container-fluid">
             <img src="./img/logo.png" class="img-fluid px-2 " style="height: 40px;" alt="">
             <a id="navbarBrand" class=" h2 text-white pr-3 mt-2 " href="{{ url('/') }}">
@@ -18,7 +18,7 @@
                         <a  class="nav-link h5 text-white  px-md-3" href="{{route('team')}}">Team</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link h5 text-white  px-md-3" href="{{route('about')}}">Contattaci</a>
+                        <a class="nav-link h5 text-white  px-md-3" href="{{route('contact.contacts')}}">Contattaci</a>
                     </li>
                 </ul>
 
