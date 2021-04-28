@@ -15,7 +15,7 @@ class FrontController extends Controller
     {
        $breweries = Brewery::where('visible',true)
        ->orderBy('id' , 'desc')
-       ->take(4)
+       ->take(3)
        ->get();
         return view('index', compact('breweries'));
     }
@@ -39,5 +39,13 @@ class FrontController extends Controller
     public function team()
     {
         return view('team');
+    }
+
+    public function search(Request $request){
+        $q = $request->input('q');
+
+        $breweries = Brewery::search($q)->where('visible',true)->get();
+
+        return view('search_results', compact('q','breweries'));
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\NotifyBrewery;
 use App\Mail\ContactReceived;
+use App\Models\Beer;
 use App\Models\Brewery;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -45,15 +46,18 @@ class HomeController extends Controller
     }
 
     public function report()
-    {
-        return view('report');
+    {   
+        $beers= Beer::all();
+        return view('report',compact('beers'));
     }
 
     public function notify(NotifyBrewery $request)
-    {
+    {   
+       
         $name = $request->input('name');
         $city = $request->input('city');
         $address = $request->input('address');
+        $beers = $request->beers;
         $description = $request->input('description');
         $img = $request->file('img')->store('public/img');
         Brewery::create(compact('name', 'description' , 'img'));

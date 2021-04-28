@@ -12,7 +12,7 @@ class Brewery extends Model
     use Searchable;
     use HasFactory;
 
-    protected $fillable = ['name' , 'description' , 'city', 'address', 'img'];
+    protected $fillable = ['name' , 'description' , 'city', 'address', 'beers', 'img'];
 
     public function toSearchableArray()
     {
@@ -33,6 +33,11 @@ class Brewery extends Model
     public function comments()
     {
         return $this->hasMany(Comment::class);
+    }
+
+    public function beers()
+    {
+        return $this->belongsToMany(Beer::class);
     }
 
     

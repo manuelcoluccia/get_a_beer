@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [FrontController::class , 'index'])->name('/');
 Route::get('/breweries',[FrontController::class , 'breweries'])->name('brewery.breweries');
 Route::get('/team', [FrontController::class , 'team'])->name('team');
+Route::get('/search',[FrontController::class , 'search'])->name('search');
 
 /* Rotte birrerie */
 Route::get('/brewery/{id}/details',[BreweriesController::class,'details'])->name('brewery.details');

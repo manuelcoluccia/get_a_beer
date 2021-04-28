@@ -10041,11 +10041,29 @@ body {
 
 .masthead {
   height: 90vh;
-  min-height: 500px;
+  min-height: 200px;
   background-image: url("/img/beer.jpg");
   background-size: 100%;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.search-bar {
+  width: 40%;
+  height: 50px;
+  border: none;
+  border-bottom: 3px solid var(--secondary-color);
+  background-color: #000000;
+  color: white;
+  outline: none;
+}
+
+.btn-search {
+  position: relative;
+  background-color: var(--secondary-color) !important;
+  color: black;
+  border: none;
+  margin-top: 18px;
 }
 
 .beer {
@@ -10058,6 +10076,13 @@ body {
   background-attachment: fixed;
 }
 
+@media only screen and (max-width: 600px) {
+  .beer {
+    height: 70vh;
+    min-height: 100px;
+    background-size: 100%;
+  }
+}
 .beer-logo {
   transition: 1s;
 }
@@ -10067,8 +10092,7 @@ body {
 }
 
 .card-custom {
-  height: 450px;
-  width: 400px;
+  height: 400px;
   border: 3px solid var(--secondary-color);
   border-radius: 20px;
   padding: 10px;
