@@ -13,6 +13,9 @@ class CreateBreweriesTable extends Migration
             $table->id();
             $table->string('name', 160);
             $table->text('description');
+            $table->string('city');
+            $table->string('address');
+            $table->string('beers')->nullable();
             $table->string('img');
             $table->timestamps();
         });

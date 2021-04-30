@@ -23,6 +23,8 @@ class NotifyBreweryUpdate extends FormRequest
         return [
             'name' => 'required | max:100',
             'description' => 'required | max:1000',
+            'city' => ' | max:100',
+            'address' => ' | max:100',
             'lat' => ['required','regex:/^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$/'],             
             'lon' => ['required','regex:/^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$/'],
             'img' => 'image'

@@ -12,7 +12,7 @@ class Brewery extends Model
     use Searchable;
     use HasFactory;
 
-    protected $fillable = ['name' , 'description' , 'city', 'address', 'beers', 'img'];
+    protected $fillable = ['name','description','city','address','img'];
 
     public function toSearchableArray()
     {

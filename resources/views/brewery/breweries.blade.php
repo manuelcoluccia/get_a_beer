@@ -13,12 +13,24 @@
               <div class="caption-content">
                 <div class="h2">{{$brewery->name}}</div>
                 <p class="mb-0">{{$brewery->description}}</p>
+                <p>{{$brewery->city}}</p>
+                <p>{{$brewery->address}}</p>
+                @foreach ($brewery->beers as $beer)
+                  <span>{{$beer->name}},</span>   
+                @endforeach
+                
                 @if ($brewery->visible == 0)
                     <form action="{{route('approved', ['id' => $brewery->id])}}" method="POST">
                       @csrf
                       <button type="submit">Rendila visibile</button>
                     </form>
+                    <form action="{{route('brewery.destroy', ['id' => $brewery->id])}}" method="POST">
+                      @csrf
+                      @method('DELETE')
+                      <button type="submit">Elimina</button>
+                    </form>
                 @endif
+
               </div>
             </div>
             <img class="img-fluid" src="{{Storage::url($brewery->img)}}" alt="{{$brewery->name}}">

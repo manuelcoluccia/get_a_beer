@@ -19,9 +19,9 @@ class CreateBeersTable extends Migration
         $beers = ['Lupulus', 'Punk-ipa', 'Hoegaarden', 'Guinness', 'Leffe', 'Duvel', 'Delirium', 'Chouffe', 'La Trappe', 'Bush'];
 
         foreach($beers as $beer){
-            $b = new Beer();
-            $b->name = $beer;
-            $b->save();
+            Beer::create([
+                'beer'=>$beer
+            ]);
         }
     }
 

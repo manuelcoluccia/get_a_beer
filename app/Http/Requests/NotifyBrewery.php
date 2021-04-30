@@ -20,6 +20,7 @@ class NotifyBrewery extends FormRequest
             'city' => 'required | max:100',
             'address' => 'required | max:100',
             'description' => 'required | max:1000',
+            'beers'=> 'required',
             'img' => 'required | image',
         ];
     }

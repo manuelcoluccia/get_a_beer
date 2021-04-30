@@ -47,20 +47,24 @@ class HomeController extends Controller
 
     public function report()
     {   
-        $beers= Beer::all();
-        return view('report',compact('beers'));
+        $beers = Beer::all();
+        return view('report', compact('beers'));
     }
 
     public function notify(NotifyBrewery $request)
     {   
-       
-        $name = $request->input('name');
-        $city = $request->input('city');
-        $address = $request->input('address');
-        $beers = $request->beers;
-        $description = $request->input('description');
-        $img = $request->file('img')->store('public/img');
-        Brewery::create(compact('name', 'description' , 'img'));
+        $new_brewery = Brewery::create([
+            'name'=>$request->name,
+            'city'=>$request->city,
+            'address'=>$request->address,
+            'description'=>$request->description,
+            'img'=>$request->file('img')->store('public/img')
+        ]);
+        
+        $selected_beers= $request->beers;
+        $new_brewery->beers()->attach($selected_beers);
+        
+      
 
         return redirect(route('brewery.thankyou'));
         
