@@ -1,76 +1,36 @@
 <x-layouts>
-   
-    <style>
-        .masthead{
-            /* background-image:linear-gradient(120deg , rgba(220,170,78,0.1) 0px ,  rgba(246, 245, 243, 0.1) 100%), url("{{Storage::url($brewery->img)}}"); */
-            height: 1000px;
-
-        }
-      </style>
-      
-    <header class="masthead d-flex">
-        <div class="container text-center my-auto">
-            <h1 class="mb-1 ">{{$brewery->name}}</h1>
-            <h3 class="mb-5 ">
-            <em>{{$brewery->description}}</em>
-            </h3>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href={{route('brewery.breweries')}}>Tutte le birrerie</a>
+    <div class="container my-5 py-5">
+        <div class="row my-5">
+            <div class="col-12 text-center">
+                <h1 class=" text-sec">{{$brewery->name}}</h1>
+            </div>
         </div>
-        <div class="overlay"></div>
-    </header>
-
-    @auth
-        @if (Auth::user()->is_Admin)
-        <div class="container">
-            <h2 class="text-center">Edit birreria</h2>
-            @if ($errors->any())
-            <div class="alert alert-danger">
+        <div class="row">
+            <div class="col-12">
+                <img class="img-fluid" src="{{Storage::url($brewery->img)}}" alt="">
+                <h2 class="mt-5 text-sec">Descrizione</h2>
+                <h3 class="mb-5 text-white">{{$brewery->description}}</h3>
+                <h2 class="mt-5 text-sec">Birre disponibili</h2>
                 <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
+                    @foreach ($brewery->beers as $beer)
+                    <li class="text-white h5">{{$beer->name}}</li>
                     @endforeach
                 </ul>
-            </div>
-            @endif
-            <div class="row">
-                <div class="col-12">
-                <form method="POST" action="{{route('brewery.update', ['id'=>$brewery->id])}}" enctype="multipart/form-data">
-                    @csrf
-                    <div class="form-group">
-                        <div class="form-group">
-                        <label class="" for="name">Nome birreria</label>
-                            <input type="text" class="form-control mb-3" id="name" required name="name" value={{old('name', $brewery->name)}}>            
-                        <label class="" for="description">Descrizione</label>
-                            <textarea class="form-control mb-3" name="description" id="description" cols="30" rows="10">{{old('description', $brewery->description)}}</textarea>
-                        <div class="form-group row justify-content-between">
-                            <label class="" for="lat">Latitudine</label>
-                                <input type="text" class="form-control mb-3 col-12 col-md-4" id="lat"  name="lat" value={{old('lat',$brewery->lat)}}>            
-                            <label class="" for="lon">Longitudine</label>
-                                <input type="text" class="form-control mb-3 col-12 col-md-4" id="lon"  name="lon" value={{old('lon',$brewery->lon)}}> 
-                        </div>           
-                        <label class="" for="img">Immagine</label>
-                            <div>
-                                <input type="file" class="mb-3" id="img" name="img"></div>         
-                            </div> 
-                        <button type="submit" class="btn btn-success">Salva</button>
-                    </form>
-                    <form method="POST" action="{{route('brewery.destroy',['id'=>$brewery->id])}}" enctype="multipart/form-data">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger float-right">Elimina</button>
-                    </form>
-                </div>
+                <h2 class="text-sec mt-5">Località</h2>
+                <h3 class="text-white">{{$brewery->address}} {{$brewery->city}}</h3>
+
             </div>
         </div>
-        @endif
-    @endauth
+    </div>
+   
+    
 
     <!--Comments-->
     <section class="content-section mt-5" id="comments">
         <div class="container mt-5">
             <div class="content-section-heading text-center ">
-                <h2 class="mb-5">Scopri cosa pensano gli utenti della birreria <strong>{{$brewery->name}}</strong></h2>
-                <h3 class="text-secondary">Commenti</h3>
+                <h2 class="mb-5 text-sec">Scopri cosa pensano gli utenti della birreria <strong>{{$brewery->name}}</strong></h2>
+                <h3 class="text-secondary text-white">Commenti</h3>
             </div>
             <div class="row no-glutters mt-3">
                 @foreach ($brewery->comments as $comment)
@@ -88,21 +48,16 @@
             </div>
         </div>
     </section>
+
     @auth
         <div class="container mt-5">
-            <h2>Lascia un commento</h2>
+            <h4 class="text-white">Lascia un commento</h4>
             <form action="{{route('brewery.comments.add' , ['id' => $brewery->id])}}" method="POST">
                 @csrf
                 <div class="row">                   
                     <div class="col-10">
                         <textarea name="comment" cols="55" rows="2">{{old('comment')}}</textarea>
                         <button type="submit" class="btn btn-primary mb-4 ml-3">Invia</button>
-
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="name" class="col-sm-2 col-form-label"></label>
-                    <div class="col-sm-10">
                     </div>
                 </div>
             </form>
@@ -126,7 +81,7 @@
 
 </x-layouts>
 
-@push('scripts')
+{{-- @push('scripts')
 
 <script async 
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPAw37yaMT2i92kvX9Zd4vp8Rc7rs_PD8&callback=initMap">
@@ -178,4 +133,4 @@
 
 </script>
 
-@endpush
+@endpush --}}

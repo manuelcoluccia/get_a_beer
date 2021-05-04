@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 /* Rotte principali */
 Route::get('/', [FrontController::class , 'index'])->name('/');
 Route::get('/breweries',[FrontController::class , 'breweries'])->name('brewery.breweries');
+Route::get('/project',[FrontController::class, 'project'])->name('project');
 Route::get('/team', [FrontController::class , 'team'])->name('team');
 Route::get('/search',[FrontController::class , 'search'])->name('search');
 

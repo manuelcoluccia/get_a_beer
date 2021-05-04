@@ -16,14 +16,14 @@ class Brewery extends Model
 
     public function toSearchableArray()
     {
-        /* $birre = $this->beers->pluck('name')->join(', '); */
+        $birre = $this->beers->pluck('name')->join(', '); 
         $array =[
             'id' => $this->id,
             'name' => $this->name,
             'description' => $this->description,
             'city' => $this->city,
             'altro' => 'birrerie birra',
-            /* 'birre' => $birre */
+            'birre' => $birre 
 
         ];
 

@@ -67,8 +67,9 @@
         <div class="card-custom">
           <img src="{{Storage::url($brewery->img)}}" alt="{{$brewery->name}}" class="img-fluid rounded" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{$brewery->name}}</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <h3 class="card-title">{{$brewery->name}}</h3>
+            <p class="card-text h5">{{$brewery->city}}</p>
+            <p class="card-text">{{$brewery->address}}</p>
             <a href="{{route('brewery.details',['id' => $brewery->id])}}" class="btn btn-warning ml-auto">Scoprila</a>
           </div>
         </div>
@@ -78,7 +79,7 @@
   </section>
   
   <!-- Call to Action -->
-  <section class="container my-5 py-5 text-center text-white">
+  <section class="container my-5 py-5 text-center text-white border-custom">
     <div class="row ">
       <div class="col-12">
         <h1 class="mb-4">Conosci una nuova birreria? Segnalacela</h1>

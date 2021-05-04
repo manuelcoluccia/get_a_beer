@@ -1,6 +1,7 @@
  <!-- Footer -->
  <footer class="footer text-center">
     <div class="container">
+      <h5 class="text-sec">Follow us</h5>
       <ul class="list-inline mb-5">
         <li class="list-inline-item">
           <a class="social-link rounded-circle mr-3" href="#!">

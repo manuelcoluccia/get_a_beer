@@ -12,10 +12,13 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto mt-3">
                     <li class="nav-item ">
-                        <a  class="nav-link h5 text-white  px-md-3"  href="{{route('brewery.breweries')}}">Birrerie</a>
+                        <a  class="nav-link h5 text-white  px-md-3"  href="{{route('brewery.breweries')}}">Le Birrerie</a>
                     </li>
                     <li class="nav-item">
-                        <a  class="nav-link h5 text-white  px-md-3" href="{{route('team')}}">Team</a>
+                        <a  class="nav-link h5 text-white  px-md-3" href="{{route('project')}}">Il progetto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a  class="nav-link h5 text-white  px-md-3" href="{{route('team')}}">Il Team</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link h5 text-white  px-md-3" href="{{route('contact.contacts')}}">Contattaci</a>

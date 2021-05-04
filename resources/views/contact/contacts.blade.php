@@ -2,18 +2,17 @@
 
   <!-- About -->
   <section>
-    <div class="container content-section my-5 py-5">
+    <div class="container my-5 py-5 bg-contact">
       <div class="row justify-content-center">
         <div class="col-12">
           <h1 class="text-center text-white">Hai una proposta??</h1>
           <h4 class="text-center font-italic text-white">Contattaci. Siamo aperti a nuove idee...</h4>
         </div>
       </div>
-      <div class="row mt-4 ">
-        <div class="col-12 bg-transparent p-3 ">
+      <div class="row mt-4">
+        <div class="col-12 col-md-6 bg-transparent p-3 ">
           <form method="POST" action="{{route ('contact.submit')}}">
             @csrf
-            <div class="form-group">
               <div class="form-group">
                 <label class="text-white" for="name">Nome</label>
                 <input type="text" class="form-control mb-3" id="name" name="name">            
