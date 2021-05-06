@@ -11,7 +11,8 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{$title ?? 'Birrerie locali'}}i</title>
+        <title>{{$title ?? 'Getabeer'}}</title>
+        <meta name="description" content="{{$description ?? ' '}}">
 
       
 
@@ -37,7 +38,9 @@
         
     </head>
     <body id="page-top">
+
         <x-_navbar />
+
         <div id="app">
 
         {{$slot}}
@@ -49,7 +52,7 @@
         
         @stack('scripts')
         
-    </div>
+        </div>
     <script src="{{ mix('js/app.js') }}"></script>
     
     <!-- Bootstrap core JavaScript -->

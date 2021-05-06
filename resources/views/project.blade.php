@@ -1,4 +1,7 @@
 <x-layouts>
+    <x-slot name='title'>The project | Getabeer </x-slot>
+   <x-slot name='description'>project getabeer</x-slot>
+
     <div class="container my-5 py-5">
         <div class="row my-5">
             <div class="col-12 col-md-6">

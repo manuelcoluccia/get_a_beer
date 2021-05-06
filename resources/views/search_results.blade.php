@@ -1,4 +1,7 @@
 <x-layouts>
+  <x-slot name='title'> Risulati ricerca | Getabeer </x-slot>
+  <x-slot name='description'>Risulati ricerca effettuata per nome birreria,indirizzo o birre disponibili</x-slot>
+
     <section class="container my-5 py-5">
         <div class="row text-center">
           <div class="col-12 mb-5">

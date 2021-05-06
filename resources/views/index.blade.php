@@ -1,4 +1,6 @@
 <x-layouts>
+  <x-slot name='title'>Home | Getabeer </x-slot>
+  <x-slot name='description'>Homepage di getabeer</x-slot>
   
   <!-- Header -->
   <header class="masthead mb-5">
@@ -21,7 +23,7 @@
       <div class="row align-items-center">
         <div class="col-12 col-md-6">
         </div>
-        <div class="col-12 col-md-6 pt-5 mt-5 ">
+        <div class="col-12 col-md-6 pt-5 mt-5">
           <h2 class="text-white py-3 h1 mb-4">Dove sarà la tua prossima birra?</h2>
           <p class="text-white h3">Get a beer è il primo portale con centinaia di birrerie tra cui scegliere. </p>
           <p class="text-white h3 py-3">Scopri le birrerie della tua citta e decidi dove andare a bere la prossima birra..</p>
@@ -39,16 +41,16 @@
     </div>
     <div class="row justify-content-between my-4 py-4">
       <div class="col-6 col-lg-2 ">
-        <img class="img-fluid ml-4 beer-logo" width="150"  src="./img/ceres.jpeg" alt="Logo-birra">
+        <img class="img-fluid ml-4 beer-logo " width="150"  src="./img/ceres.jpeg" alt="Logo-birra">
       </div>
       <div class="col-6 col-lg-2 ">
-        <img class="img-fluid beer-logo"  width="170" src="./img/birra1.png" alt="Logo-birra">
+        <img class="img-fluid beer-logo scale-in-ver-center"  width="170" src="./img/birra1.png" alt="Logo-birra">
       </div>
       <div class="col-6 col-lg-2 pl-5">
-        <img class="img-fluid beer-logo" width="150"  src="./img/birra2.png" alt="Logo-birra">
+        <img class="img-fluid beer-logo scale-in-ver-center" width="150"  src="./img/birra2.png" alt="Logo-birra">
       </div>
       <div class="col-6 col-lg-2">
-        <img class="img-fluid beer-logo" width="150"  src="./img/birra3.png" alt="Logo-birra">
+        <img class="img-fluid beer-logo scale-in-ver-center" width="150"  src="./img/birra3.png" alt="Logo-birra">
       </div>
     </div>
   </section>
@@ -61,16 +63,16 @@
         <h1 class="mb-5 text-white ">Le ultime Birrerie inserite...</h1>
       </div>
     </div>
-    <div class="row px-5 scrollable ">
+    <div class="row px-5">
       @foreach ($breweries as $brewery)
       <div class="col-12 col-md-4 py-3"> 
         <div class="card-custom">
           <img src="{{Storage::url($brewery->img)}}" alt="{{$brewery->name}}" class="img-fluid rounded" alt="...">
           <div class="card-body">
             <h3 class="card-title">{{$brewery->name}}</h3>
-            <p class="card-text h5">{{$brewery->city}}</p>
-            <p class="card-text">{{$brewery->address}}</p>
-            <a href="{{route('brewery.details',['id' => $brewery->id])}}" class="btn btn-warning ml-auto">Scoprila</a>
+            <p class="card-text h5"><i class="fas fa-map-marker-alt mr-2"></i>{{$brewery->city}} </p>
+            <p class="card-text ml-4">{{$brewery->address}}</p>
+            <a href="{{route('brewery.details',['id' => $brewery->id])}}" class="btn btn-warning float-right">Scoprila</a>
           </div>
         </div>
       </div>              

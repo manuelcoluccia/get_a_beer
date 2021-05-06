@@ -1,6 +1,6 @@
  <!-- Footer -->
- <footer class="footer text-center">
-    <div class="container">
+ <footer class="footer text-center mt-5">
+    <div class="container mt-5">
       <h5 class="text-sec">Follow us</h5>
       <ul class="list-inline mb-5">
         <li class="list-inline-item">
@@ -19,6 +19,6 @@
           </a>
         </li>
       </ul>
-      <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
+      <p class="text-muted small mb-0">Copyright &copy; GetaBeer! 2021</p>
     </div>
   </footer>

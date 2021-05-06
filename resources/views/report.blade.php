@@ -1,4 +1,8 @@
 <x-layouts>
+  <x-slot name='title'>Segnala | Getabeer </x-slot>
+  <x-slot name='description'>Segnala le birrerie presenti nella tua città</x-slot>
+
+
   <section>
     <div class="container my-5 py-5 content-section">   
       <div class="row justify-content-center">

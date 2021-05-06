@@ -29,7 +29,7 @@ class FrontController extends Controller
 
         }else {
             $breweries = Brewery::where('visible' , true)
-            ->orderBy('id' , 'desc')->get()->paginate(6);
+            ->orderBy('id' , 'desc')->get();
         }
 
         

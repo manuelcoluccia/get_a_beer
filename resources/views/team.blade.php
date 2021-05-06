@@ -1,10 +1,13 @@
 <x-layouts>
+  <x-slot name='title'>Team | Getabeer </x-slot>
+  <x-slot name='description'>Il team di getabeer</x-slot>
 
-  <div class="container my-5 py-5">
 
-    <div class="row my-5 py-5">
+  <div class="container mt-5 pt-5">
+
+    <div class="row mt-5 pb-5">
       <div class="col-12">
-        <h1 class="text-center text-white ">Ecco chi c'è dietro la birra che berrai stasera..</h1>
+        <h2 class="text-center text-sec">Ecco chi c'è dietro la birra che berrai stasera..</h2>
       </div>
     </div>
 

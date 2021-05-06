@@ -1,25 +1,32 @@
 <x-layouts>
-    <div class="container my-5 py-5">
+    <x-slot name='title'>{{$brewery->name}} | Getabeer </x-slot>
+    <x-slot name='description'>Pagina birreria {{$brewery->name}} in cui visualizzare le informazioni</x-slot>
+
+    <div class="container mt-5 pt-2 my-md-5 py-md-5">
         <div class="row my-5">
             <div class="col-12 text-center">
-                <h1 class=" text-sec">{{$brewery->name}}</h1>
+                <h1 class="text-sec">{{$brewery->name}}</h1>
             </div>
         </div>
         <div class="row">
-            <div class="col-12">
-                <img class="img-fluid" src="{{Storage::url($brewery->img)}}" alt="">
-                <h2 class="mt-5 text-sec">Descrizione</h2>
-                <h3 class="mb-5 text-white">{{$brewery->description}}</h3>
-                <h2 class="mt-5 text-sec">Birre disponibili</h2>
+            <div class="col-12 col-md-6">
+                <img class="img-fluid brewery-img" src="{{Storage::url($brewery->img)}}" alt="">
+            </div>
+            <div class="col-12 col-md-6 mt-4 mt-md-0">
+                <h2 class=" text-sec">Descrizione</h2>
+                <p class="text-white text-custom">{{$brewery->description}}</p>
+                <h2 class="text-sec">Birre disponibili</h2>
                 <ul>
                     @foreach ($brewery->beers as $beer)
                     <li class="text-white h5">{{$beer->name}}</li>
                     @endforeach
                 </ul>
-                <h2 class="text-sec mt-5">Località</h2>
-                <h3 class="text-white">{{$brewery->address}} {{$brewery->city}}</h3>
+                <h2 class="text-sec">Località</h2>
+                <p class="text-white text-custom">{{$brewery->address}} {{$brewery->city}}</p>
 
-            </div>
+            </div>    
+               
+           
         </div>
     </div>
    
@@ -28,15 +35,16 @@
     <!--Comments-->
     <section class="content-section mt-5" id="comments">
         <div class="container mt-5">
-            <div class="content-section-heading text-center ">
-                <h2 class="mb-5 text-sec">Scopri cosa pensano gli utenti della birreria <strong>{{$brewery->name}}</strong></h2>
-                <h3 class="text-secondary text-white">Commenti</h3>
+            <div class="row  ">
+                <div class="col-12 text-center">
+                    <h2 class="mb-5 text-sec">Scopri cosa pensano gli utenti della birreria <strong>{{$brewery->name}}</strong></h2>
+                </div>
             </div>
-            <div class="row no-glutters mt-3">
+            <div class="row mt-3">
                 @foreach ($brewery->comments as $comment)
-                    <div class="col-lg-6">
-                        <div class="p-3 mb-2 bg-dark text-white">
-                            <span class="caption">
+                    <div class="col-12 col-lg-6">
+                        <div class="p-3 mb-2 bg-dark text-white border-custom">
+                            <span class="caption ">
                                 <span class="capiton-content">
                                     <h4>{{$comment->user->name}}</h4>
                                     <p class=" font-italic mb-0">{{$comment->comment}}</p>
@@ -55,9 +63,11 @@
             <form action="{{route('brewery.comments.add' , ['id' => $brewery->id])}}" method="POST">
                 @csrf
                 <div class="row">                   
-                    <div class="col-10">
-                        <textarea name="comment" cols="55" rows="2">{{old('comment')}}</textarea>
-                        <button type="submit" class="btn btn-primary mb-4 ml-3">Invia</button>
+                    <div class="col-4">
+                        <textarea name="comment" cols="65" rows="3">{{old('comment')}}</textarea>
+                        <div>
+                            <button type="submit" class="btn btn-warning float-lg-right">Invia</button>
+                        </div>
                     </div>
                 </div>
             </form>

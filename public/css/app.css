@@ -10014,6 +10014,10 @@ body {
   background-color: black !important;
 }
 
+#app {
+  height: 400px;
+}
+
 .bg-black {
   background-color: black;
 }
@@ -10028,6 +10032,10 @@ body {
 
 .text-shadow {
   text-shadow: 2px 2px 5px var(--secondary-color);
+}
+
+.text-custom {
+  font-size: 20px;
 }
 
 #navbar {
@@ -10125,13 +10133,31 @@ body {
 }
 
 .card-custom {
-  height: 400px;
+  height: 420px;
+  box-sizing: border-box;
   border: 3px solid var(--secondary-color);
   border-radius: 20px;
   padding: 10px;
   color: white;
+  overflow: hidden;
+  box-shadow: 0px 7px 23px -4px var(--secondary-color);
+  transition: 1s;
 }
 
+.card-custom:hover {
+  transform: scale(1.1);
+}
+
+@media only screen and (max-width: 600px) {
+  .card-custom {
+    height: 380px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 20px;
+    padding: 10px;
+    color: white;
+    overflow: hidden;
+  }
+}
 .card-login {
   background-color: black !important;
   color: var(--secondary-color);
@@ -10147,6 +10173,14 @@ body {
 .bg-contact {
   background: linear-gradient(90deg, black, rgba(0, 0, 0, 0.794)), url("/img/sfondo-contact.jpg");
   background-size: cover;
+}
+
+.brewery-img {
+  transition: 1s;
+}
+
+.brewery-img:hover {
+  transform: scale(1.1);
 }
 
 .our-team {
