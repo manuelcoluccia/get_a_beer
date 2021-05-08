@@ -1,8 +1,8 @@
 <x-layouts>
-    <x-slot name='title'>Registati | Getabeer </x-slot>
+    <x-slot name='title'>Registrati | Getabeer </x-slot>
     <x-slot name='description'>Registarti al portale Getabeer e scopri le birrerie nella tua zona</x-slot>
 
-        <div class="container my-5 py-5">
+        <div class="container reeee my-5 py-5">
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card card-login ">

@@ -27,7 +27,8 @@
           <h2 class="text-white py-3 h1 mb-4">Dove sarà la tua prossima birra?</h2>
           <p class="text-white h3">Get a beer è il primo portale con centinaia di birrerie tra cui scegliere. </p>
           <p class="text-white h3 py-3">Scopri le birrerie della tua citta e decidi dove andare a bere la prossima birra..</p>
-          <button class="btn btn-warning btn-lg shadow mt-5">Scopri tutte le birrerie</button>
+          <a href="{{route('brewery.breweries')}}"> <button class="btn btn-warning btn-lg shadow mt-5">Scopri tutte le birrerie</button></a>
+         
         </div>
       </div>
     </div>
@@ -82,7 +83,7 @@
   
   <!-- Call to Action -->
   <section class="container my-5 py-5 text-center text-white border-custom">
-    <div class="row ">
+    <div class="row">
       <div class="col-12">
         <h1 class="mb-4">Conosci una nuova birreria? Segnalacela</h1>
         <p class="text-secondary h3">Siamo aperti a ricevere le vostre segnalazioni di nuove birrerie e dopo un'attenta esaminazione verranno inserite</p>
@@ -90,14 +91,6 @@
       </div>
     </div>
   </section>
-  
-  <!-- Map -->
-  {{--     <div id="contact" class="map">
-    <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br />
-    <small>
-      <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
-    </small>
-  </div> --}}
+
   
 </x-layouts>

@@ -5,7 +5,7 @@
 
   <!-- About -->
   <section>
-    <div class="container my-5 py-5 bg-contact">
+    <div class="container-fluid my-5 py-5 bg-contact">
       <div class="row">
         <div class="col-12">
           <h2 class="text-sec text-center">Hai una proposta??</h2>

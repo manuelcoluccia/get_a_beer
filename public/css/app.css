@@ -10014,10 +10014,6 @@ body {
   background-color: black !important;
 }
 
-#app {
-  height: 400px;
-}
-
 .bg-black {
   background-color: black;
 }
@@ -10041,6 +10037,19 @@ body {
 #navbar {
   z-index: 9999;
   transition: 1s;
+}
+
+#navbarBrand {
+  text-decoration: none;
+}
+
+.nav-link {
+  transition: 0.4s;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+  border-bottom: 2px solid var(--secondary-color);
 }
 
 .hr-white {
@@ -10504,58 +10513,6 @@ h3:after {
   width: 100%;
 }
 
-.utility-list li {
-  margin: 0 5px 0 0;
-  padding: 3px 0 15px 0px;
-  display: inline-block;
-  font-size: 0.8em;
-}
-
-.licon {
-  position: relative;
-  width: 23px;
-  height: 15px;
-  display: inline-block;
-  vertical-align: middle;
-}
-
-.licon:before {
-  content: "";
-  background-size: 250px;
-  width: 26px;
-  height: 20px;
-  display: inline-block;
-  vertical-align: middle;
-  position: absolute;
-  top: -3px;
-  left: 0;
-}
-
-.icon-white {
-  filter: brightness(10);
-}
-
-.icon-black {
-  filter: brightness(0);
-  opacity: 0.6;
-}
-
-.icon-like:before {
-  background-position: -183px -6px;
-}
-
-.icon-com:before {
-  background-position: -63px -4px;
-}
-
-.icon-dat:before {
-  background-position: -94px -7px;
-}
-
-.icon-tag:before {
-  background-position: -33px -6px;
-}
-
 @media (max-width: 750px) {
   .utility-info {
     text-align: center;
@@ -10598,4 +10555,9 @@ h3:after {
   .intro {
     font-size: 0.8em;
   }
+}
+.footer {
+  display: flex;
+  height: 500px !important;
+  align-items: flex-end;
 }

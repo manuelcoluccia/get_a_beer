@@ -13,7 +13,7 @@
         <div class="blog-card spring-fever">
           <img class="img-fluid" src="{{Storage::url($brewery->img)}}" alt="{{$brewery->name}}">
           <div class="title-content">
-
+            
             @if ($brewery->visible == 0)
             <div>
               <form action="{{route('approved', ['id' => $brewery->id])}}" method="POST">
@@ -27,8 +27,8 @@
               </form>
             </div> 
             @endif
-
-            <h3><a href="#">{{$brewery->name}}</a></h3>
+            
+            <h3>{{$brewery->name}}</h3>
           </div>
           <div class="card-info">
             <p>{{$brewery->description}}</p>
@@ -44,43 +44,9 @@
       @endforeach
     </div>
     
-  </section>    
+  </section>   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  {{--         <div class="col-lg-6">
-    <a class="portfolio-item" href="{{route('brewery.details',['id' => $brewery->id])}}">
-      <div class="caption">
-        <div class="caption-content">
-          <div class="h2</div>
-            <p class="mb-0">{{$brewery->description}}</p>
-            <p>{{$brewery->city}}</p>
-            <p>{{$brewery->address}}</p>
-            @foreach ($brewery->beers as $beer)
-            <span>{{$beer->name}},</span>   
-            @endforeach--}}
-            
-
-
 </x-layouts>
 
 
